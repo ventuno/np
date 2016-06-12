@@ -1,0 +1,140 @@
+html {
+  font-size: 120px;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: lightblue;
+}
+
+.player {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  left: 50%;
+  border: 5px solid lime;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.player > img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s;
+  transform: rotate(45deg);
+  border-radius: 50%;
+}
+
+.player-inside {
+  border-color: yellow;
+}
+
+.player-pain {
+  border-color: tomato;
+}
+/*
+.player-inside > img {
+  background-image: url(em_inside.png);
+}
+
+
+.player-pain-head > img {
+  background-image: url(em_pain.png);
+}
+
+.player-pain-side > img {
+  background-image: url(em_pain_side.png);
+}
+*/
+
+.player-fall > img {
+  transition: transform 1s;
+  transform: rotate(180deg);
+}
+
+.obstacle {
+  position: absolute;
+  height: 2.25rem;
+  width: 2rem;
+  left: 125%;
+  top: calc(50% - 1.5rem);
+  border-radius: 5px;
+}
+
+.obstacle::before {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  bottom: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.obstacle::after {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#points {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.3rem;
+}
+
+.game-over::after {
+  content: "ERNESTO DIED.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  line-height: 100vh;
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+.cloud {
+  position: absolute;
+  width: 10vh;
+  height: 10vh;
+  left: 35%;
+  top: 10%;
+  opacity: 0.5;
+  background-color: white;
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.cloud::before {
+  content: "";
+  position: absolute;
+  width: 7vh;
+  height: 6vh;
+  left: -2.5vh;
+  bottom: 0;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.cloud::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 8vh;
+  height: 7vh;
+  bottom: 0;
+  right: -3.5vh;
+  border-radius: 50%;
+}
